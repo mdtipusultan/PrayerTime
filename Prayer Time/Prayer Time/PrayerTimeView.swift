@@ -22,110 +22,112 @@ struct PrayerTimeView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                // Top Section
-                HStack(spacing: 5) {
-                    HStack(spacing: 0) {
-                        Image("sun")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 57, height: 57, alignment: .center)
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 0) {
+                    // Top Section
+                    HStack(spacing: 5) {
+                        HStack(spacing: 0) {
+                            Image("sun")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 57, height: 57, alignment: .center)
+                            
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(formattedTime(currentDateTime))
+                                    .font(.system(size: 14))
+                                Text(formattedDate(currentDateTime))
+                                    .font(.system(size: 13))
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        
+                        Spacer()
                         
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(formattedTime(currentDateTime))
+                            Text("Next Azan Comes After")
                                 .font(.system(size: 14))
-                            Text(formattedDate(currentDateTime))
-                                .font(.system(size: 13))
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text("Next Azan Comes After")
-                            .font(.system(size: 14))
-                        if let prayerTimes = prayerViewModel.prayerTimes {
-                            Text(prayerTimes.Dhuhr) // Example for Dhuhr, update accordingly
-                                .font(.system(size: 14))
-                                .foregroundColor(.gray)
-                        } else {
-                            Text("Loading...")
-                                .font(.system(size: 14))
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-                .padding(.horizontal, 5)
-                
-                CarouselView()
-                    .padding(.top)
-                
-                HStack(spacing: 10) {
-                    // Existing ZStack with Buttons
-                    ZStack {
-                        Rectangle()
-                            .fill(Color.white)
-                            .frame(width: 156, height: 334)
-                            .cornerRadius(10)
-                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
-                        
-                        LazyVGrid(columns: columns, spacing: 35) {
-                            ForEach(0..<buttonTitles.count, id: \.self) { index in
-                                NavigationLink(destination: destinationView(for: buttonTitles[index])) {
-                                    VStack(spacing: 5) {
-                                        Image(buttonImages[index])
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 43, height: 42)
-                                        
-                                        Text(buttonTitles[index])
-                                            .font(.system(size: 14))
-                                            .foregroundColor(.black)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                }
-                            }
-                        }
-                        .padding(.horizontal, 10) // Adjust padding if needed
-                    }
-                    
-                    
-                    ZStack {
-                        Rectangle()
-                            .fill(Color.white)
-                            .frame(width: 165, height: 334)
-                            .cornerRadius(10)
-                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
-                        
-                        VStack(spacing: 10) {
-                            Text("Prayer Times")
-                                .font(.headline)
-                                .foregroundColor(Color("PrimaryColor"))
-                            
-                            Image("prayer_logo")
-                            
                             if let prayerTimes = prayerViewModel.prayerTimes {
-                                VStack(alignment: .leading, spacing: 10) {
-                                    prayerTimeRow(name: "Fajr", time: prayerTimes.Fajr)
-                                    //prayerTimeRow(name: "Sunrise", time: prayerTimes.Sunrise)
-                                    prayerTimeRow(name: "Dhuhr", time: prayerTimes.Dhuhr)
-                                    prayerTimeRow(name: "Asr", time: prayerTimes.Asr)
-                                    prayerTimeRow(name: "Maghrib", time: prayerTimes.Maghrib)
-                                    prayerTimeRow(name: "Isha", time: prayerTimes.Isha)
-                                }
+                                Text(prayerTimes.Dhuhr) // Example for Dhuhr, update accordingly
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.gray)
                             } else {
                                 Text("Loading...")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.gray)
                             }
-                            
-                            
                         }
-                        .padding()
                     }
+                    .padding(.horizontal, 5)
+                    
+                    CarouselView()
+                        .padding(.top)
+                    
+                    HStack(spacing: 10) {
+                        // Existing ZStack with Buttons
+                        ZStack {
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(width: 156, height: 334)
+                                .cornerRadius(10)
+                                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
+                            
+                            LazyVGrid(columns: columns, spacing: 35) {
+                                ForEach(0..<buttonTitles.count, id: \.self) { index in
+                                    NavigationLink(destination: destinationView(for: buttonTitles[index])) {
+                                        VStack(spacing: 5) {
+                                            Image(buttonImages[index])
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 43, height: 42)
+                                            
+                                            Text(buttonTitles[index])
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.black)
+                                        }
+                                        .frame(maxWidth: .infinity)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 10) // Adjust padding if needed
+                        }
+                        
+                        
+                        ZStack {
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(width: 165, height: 334)
+                                .cornerRadius(10)
+                                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
+                            
+                            VStack(spacing: 10) {
+                                Text("Prayer Times")
+                                    .font(.headline)
+                                    .foregroundColor(Color("PrimaryColor"))
+                                
+                                Image("prayer_logo")
+                                
+                                if let prayerTimes = prayerViewModel.prayerTimes {
+                                    VStack(alignment: .leading, spacing: 10) {
+                                        prayerTimeRow(name: "Fajr", time: prayerTimes.Fajr)
+                                        //prayerTimeRow(name: "Sunrise", time: prayerTimes.Sunrise)
+                                        prayerTimeRow(name: "Dhuhr", time: prayerTimes.Dhuhr)
+                                        prayerTimeRow(name: "Asr", time: prayerTimes.Asr)
+                                        prayerTimeRow(name: "Maghrib", time: prayerTimes.Maghrib)
+                                        prayerTimeRow(name: "Isha", time: prayerTimes.Isha)
+                                    }
+                                } else {
+                                    Text("Loading...")
+                                }
+                                
+                                
+                            }
+                            .padding()
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom)
                 }
-                .padding(.horizontal)
-                .padding(.bottom)
             }
         }
         .navigationTitle("Ibadah")
