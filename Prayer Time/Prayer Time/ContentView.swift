@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Prayer Time
 //
-//  Created by Rezwan Chowdhury on 4/9/24.
+//  Created by Tipu on 4/9/24.
 //
 
 import SwiftUI
