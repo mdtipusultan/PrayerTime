@@ -15,6 +15,7 @@
 		7A5252822C887FB70064102E /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52527D2C887FB70064102E /* CarouselView.swift */; };
 		7A5252832C887FB70064102E /* TasbeehView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52527E2C887FB70064102E /* TasbeehView.swift */; };
 		7A5252842C887FB70064102E /* PrayerTimesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52527F2C887FB70064102E /* PrayerTimesViewModel.swift */; };
+		7A52528A2C8883200064102E /* PrayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5252892C8883200064102E /* PrayerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7A52527D2C887FB70064102E /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		7A52527E2C887FB70064102E /* TasbeehView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasbeehView.swift; sourceTree = "<group>"; };
 		7A52527F2C887FB70064102E /* PrayerTimesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerTimesViewModel.swift; sourceTree = "<group>"; };
+		7A5252892C8883200064102E /* PrayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,10 @@
 		7A52526A2C887D3E0064102E /* Prayer Time */ = {
 			isa = PBXGroup;
 			children = (
-				7A52527B2C887FB70064102E /* CarouselItemModel.swift */,
-				7A52527D2C887FB70064102E /* CarouselView.swift */,
-				7A52527F2C887FB70064102E /* PrayerTimesViewModel.swift */,
-				7A52527C2C887FB70064102E /* PrayerTimeView.swift */,
-				7A52527E2C887FB70064102E /* TasbeehView.swift */,
-				7A52526B2C887D3E0064102E /* Prayer_TimeApp.swift */,
+				7A5252882C8882F50064102E /* App_Initial */,
+				7A5252872C8882E40064102E /* Helper */,
+				7A5252862C8882D00064102E /* OtherViews */,
+				7A5252852C8882AE0064102E /* prayerTimeViews */,
 				7A52526F2C887D420064102E /* Assets.xcassets */,
 				7A5252712C887D420064102E /* Preview Content */,
 			);
@@ -77,6 +77,41 @@
 				7A5252722C887D420064102E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7A5252852C8882AE0064102E /* prayerTimeViews */ = {
+			isa = PBXGroup;
+			children = (
+				7A52527C2C887FB70064102E /* PrayerTimeView.swift */,
+				7A52527F2C887FB70064102E /* PrayerTimesViewModel.swift */,
+				7A5252892C8883200064102E /* PrayerModel.swift */,
+			);
+			path = prayerTimeViews;
+			sourceTree = "<group>";
+		};
+		7A5252862C8882D00064102E /* OtherViews */ = {
+			isa = PBXGroup;
+			children = (
+				7A52527E2C887FB70064102E /* TasbeehView.swift */,
+			);
+			path = OtherViews;
+			sourceTree = "<group>";
+		};
+		7A5252872C8882E40064102E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7A52527B2C887FB70064102E /* CarouselItemModel.swift */,
+				7A52527D2C887FB70064102E /* CarouselView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		7A5252882C8882F50064102E /* App_Initial */ = {
+			isa = PBXGroup;
+			children = (
+				7A52526B2C887D3E0064102E /* Prayer_TimeApp.swift */,
+			);
+			path = App_Initial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +188,7 @@
 				7A5252812C887FB70064102E /* PrayerTimeView.swift in Sources */,
 				7A5252802C887FB70064102E /* CarouselItemModel.swift in Sources */,
 				7A5252832C887FB70064102E /* TasbeehView.swift in Sources */,
+				7A52528A2C8883200064102E /* PrayerModel.swift in Sources */,
 				7A5252842C887FB70064102E /* PrayerTimesViewModel.swift in Sources */,
 				7A52526C2C887D3E0064102E /* Prayer_TimeApp.swift in Sources */,
 			);
