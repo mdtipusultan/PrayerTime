@@ -13,4 +13,4 @@ Prayer Time is an iOS application that provides accurate prayer times based on t
 - **State Management:** Combine  
 
 ## Screenshots  
-![Prayer Time App Screenshot](assets/screenshot.png)  
+![Prayer Time App Screenshot](screenshot.png)  
