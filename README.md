@@ -9,8 +9,9 @@ Prayer Time is an iOS application that provides accurate prayer times based on t
 ## Tech Stack
 - **Language:** Swift  
 - **Frameworks:** SwiftUI, Combine  
-- **API Used:** [Insert API Name]  
+- **API Used:** (https://aladhan.com)  
 - **State Management:** Combine  
 
 ## Screenshots  
 ![Prayer Time App Screenshot](screenshot_home.png)  
+![Prayer Time App Screenshot](screenshot_tasbeeh.png)
